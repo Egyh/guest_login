@@ -54,4 +54,4 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
-gem 'carmen-rails', '~> 1.0.0'
+gem 'carmen-rails', git: 'git@github.com:Studiosity/carmen-rails.git'

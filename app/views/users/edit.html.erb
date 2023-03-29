@@ -2,7 +2,7 @@
   <div class='row'>
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
     <h2>User info</h2>
-    <%= form_with model:@user, url:user_path, method: :put, local:true do |f| %>
+    <%= form_with model: @user, local:true do |f| %>
       <%= render 'layouts/errors', obj: @user %>
       <div class="form-group">
         <%= f.label :name %>
@@ -15,15 +15,17 @@
       <div class="form-group">
         <%= f.label :introduction %>
         <%= f.text_area :introduction, class: "form-control introduction" %>
-
-        <div class="form-group">
-        <%= f.label :居住地 %>
-        <%= f.country_select :country_code %>
-        </div>
-        
       </div>
       <div class="form-group">
         <%= f.submit class: 'btn btn-secondary' %>
+
+        <%= form_with model: @user, url:users_path, method: :put, local: true do |f| %>
+ <div class="form-group">
+  <th><%= f.label :country_code %></th>
+  <td><%= f.country_select :country_code, class: "btn btn-secondary"%></td>
+</div>
+<% end %>
+
       </div>
     <% end %>
   </div>
